@@ -75,10 +75,15 @@ will create the following files with sample content
 // docs/api/v1/posts/create.json
 {
   "published": true,
+
   "name": "Create",
+
   "sort_order": 1,
+
   "end_point": "api/v1/posts/:id.json",
+
   "http_method": "POST",
+   
   "params": [{
     "key": "post[title]",
     "required": true,
@@ -97,10 +102,12 @@ will create the following files with sample content
     "type": "Boolean",
     "description": "Published status of the post"
   }],
+
   "header": {
     "Authentication": "Token token=<token>",
     "Content-Type": "application/json"
   },
+
   "examples": [{
     "request_headers": {
       "Authentication": "Token token=<token>",
@@ -128,10 +135,15 @@ will create the following files with sample content
 // docs/api/v1/posts/update.json
 {
   "published": true,
+
   "name": "Update",
+
   "sort_order": 2,
+
   "end_point": "api/v1/posts/:id.json",
+
   "http_method": "PUT|PATCH",
+
   "params": [{
     "key": "post[title]",
     "required": true,
@@ -150,10 +162,12 @@ will create the following files with sample content
     "type": "Boolean",
     "description": "Published status of the post"
   }],
+
   "header": {
     "Authentication": "Token token=<token>",
     "Content-Type": "application/json"
   },
+
   "examples": [{
     "request_headers": {
       "Authentication": "Token token=<token>",
@@ -182,14 +196,20 @@ will create the following files with sample content
 //docs/api/v1/posts/delete.json
 {
   "published": true,
+
   "name": "Destroy Post",
+
   "sort_order": 6,
+
   "end_point": "api/v1/posts/:id.json",
+
   "http_method": "DELETE",
+
   "header": {
     "Authentication": "Token token=<token>",
     "Content-Type": "application/json"
   },
+
   "examples": [{
     "request_headers": {
       "Authentication": "Token token=<token>",
@@ -219,4 +239,5 @@ will create the following files with sample content
 
 
 ## License
+
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
