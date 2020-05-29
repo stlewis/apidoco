@@ -43,6 +43,71 @@
                     <button class="btn btn-light btn-sm ml-2" type="button" ngclipboard data-clipboard-text="{{x.end_point}}">
                       <copy-icon />
                     </button>
+                  <div class="section-block" ng-if="x.header">
+                    <h3 class="block-title">Headers</h5>
+                    <div class="table-responsive">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <td>Name</td>
+                            <td>Description</td>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr ng-repeat="(key, value) in x.header">
+                            <td>
+                              <code>{{key}}</code>
+                            </td>
+                            <td>
+                              <code>{{value}}</code>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  <div class="section-block" ng-if="x.params && x.params.length > 0">
+                    <h3 class="block-title">Parameters</h5>
+                    <div class="table-responsive">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <td>Parameter Name</td>
+                            <td></td>
+                            <td>Data Type</td>
+                            <td>Description</td>
+                            <td></td>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr ng-repeat="param in x.params">
+                            <td>
+                              <code>{{param.key}}</code>
+                            </td>
+                            <td>
+                              <button class="btn btn-xs btn-danger" ng-if="param.required">required</button>
+                              <button class="btn btn-xs btn-primary" ng-if="!param.required">optional</button>
+                            </td>
+                            <td>{{param.type}}</td>
+                            <td>{{param.description}}</td>
+                            <td>
+                              {{param.notes}}
+                              <p ng-if="param.validations">
+                                <b>Validations:</b><br>
+                                <span ng-repeat="validation in param.validations">{{validation}}<br></span>
+                              </p>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <div class="section-block" ng-if="x.notes">
+                    <h3 class="block-title">Notes</h5>
+                    <p ng-repeat="note in x.notes">
+                      {{ note }}
+                    </p>
                   </div>
                 </div>
               </div>

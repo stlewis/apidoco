@@ -9,6 +9,16 @@ module Apidoco
     end
 
     def as_json
+      childs = children.select(&:published?).sort do |a, b|
+        if a.sort_order.class == b.sort_order.class
+          a.sort_order <=> b.sort_order
+        elsif a.sort_order.is_a?(String)
+          -1
+        else
+          1
+        end
+      end
+
       {
         is_folder: true,
         name: basename,
