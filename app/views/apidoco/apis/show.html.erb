@@ -34,6 +34,32 @@
                   <link-icon />
                 </button>
               </div>
+              <h2 class="section-title">{{x.name}}
+                <button class="btn btn-default btn-xs mt-1 pull-right" type="button" ngclipboard data-clipboard-text="{{versionAddress()}}#{{x.id}}">Copy permalink</button>
+              </h2>
+              <div ng-if="x.markdown" class='container-flex'>
+                <div class='description' ng-bind-html="x.description"></div>
+              </div>
+              <div ng-if="!x.markdown" class="container-flex"><!-- Beginning of individual doc block -->
+                <div class="description">
+                  <p ng-if="x.description">{{x.description}}</p>
+                  <div class="section-block">
+                    <h3 class="block-title">Request</h5>
+                    <div class="row">
+                      <div class="col-sm-8">
+                        <div class="input-group">
+                          <span class="input-group-btn">
+                            <button class="btn btn-success" type="button"><b>{{x.http_method}}</b></button>
+                          </span>
+                          <input type="text" readonly class="form-control" value="{{x.end_point}}">
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <button class="btn btn-default btn-sm mt-2" type="button" ngclipboard data-clipboard-text="{{x.end_point}}">Copy</button>
+                      </div>
+                    </div>
+                  </div>
+>>>>>>> Support markdown
 
               <!-- End point -->
               <div class="section-block">
@@ -143,6 +169,7 @@
                     </p>
                   </div>
                 </div>
+<<<<<<< HEAD
               </div>
 
               <!-- Description -->
@@ -156,6 +183,12 @@
                   {{ note }}
                 </p>
               </div>
+=======
+                <div class="examples">
+                  <%= render partial: "examples" %>
+                </div>
+              </div> <!-- End of visible doc stuff -->
+>>>>>>> Support markdown
             </div>
           </div>
         </div>
