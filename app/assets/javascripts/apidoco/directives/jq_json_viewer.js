@@ -1,4 +1,4 @@
-'use strict';
+//'use strict';
 
 angular.module('apiDocoApp').directive('jqJsonViewer', [function() {
   return {
