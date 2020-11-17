@@ -10,14 +10,14 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require angular
-//= require angular-sanitize
+//= require angular/1.8.0/angular
 //
 //= require apidoco/jquery.min
 //= require apidoco/jquery.json-viewer
 //= require apidoco/bootstrap/bootstrap
 //= require apidoco/clipboard.min
 //= require apidoco/directives/ngclipboard
+//= require apidoco/directives/angular-sanitize
 //= require apidoco/apidoco_app
 //
 //  Icons
